@@ -1,0 +1,48 @@
+default_language_version:
+  python: python3.12
+
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-lint
+        name: ruff lint
+        language: system
+        entry: uv run ruff check --fix
+        types: [python]
+        pass_filenames: true
+
+      - id: ruff-format
+        name: ruff format
+        language: system
+        entry: uv run ruff format
+        types: [python]
+        pass_filenames: true
+
+      - id: ty-check
+        name: ty type check
+        language: system
+        entry: uv run ty check
+        pass_filenames: false
+
+      - id: pytest
+        name: pytest
+        language: system
+        entry: uv run pytest --no-header -q
+        pass_filenames: false
+
+      - id: file-length-check
+        name: file length ≤ 300 lines
+        language: system
+        entry: bash -c '
+          failed=0
+          for f in "$@"; do
+            lines=$(wc -l < "$f")
+            if [ "$lines" -gt 300 ]; then
+              echo "ERROR: $f has $lines lines (max 300)"
+              failed=1
+            fi
+          done
+          exit $failed
+        '
+        types: [python]
+        pass_filenames: true
