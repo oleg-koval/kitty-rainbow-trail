@@ -1,6 +1,6 @@
 [project]
 name = "kitty-rainbow-trail"
-version = "0.0.1"
+version = "0.1.0"
 description = "A flying, jumping, rainbow-cycling cursor trail for the kitty terminal."
 readme = "README.md"
 license = { text = "MIT" }
@@ -38,6 +38,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/rainbow_trail"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [".coverage", ".venv", "dist"]
 
 # ---- Ruff: lint + format -----------------------------------------
 [tool.ruff]
