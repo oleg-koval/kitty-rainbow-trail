@@ -15,6 +15,10 @@
   <strong>plus a documented <code>kitty.conf</code></strong>
 </p>
 
+<p align="center">
+  <img src="./demo.gif" width="600" alt="Demo of the rainbow-cycling cursor trail in a kitty terminal window">
+</p>
+
 ---
 
 ## Features
