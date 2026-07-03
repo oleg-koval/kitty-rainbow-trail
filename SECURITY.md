@@ -9,12 +9,11 @@
 
 ## About the remote-control socket
 
-Tools built from this template use `allow_remote_control socket-only` and a
-`listen_on unix:/tmp/...` socket in `kitty.conf`. This is a local Unix domain socket scoped to
-your user, not a network listener - only local processes running as you can reach it.
-`socket-only` (rather than `yes`) additionally restricts control to that socket, so other kitty
-windows/tabs on the same machine can't issue arbitrary remote-control commands to this instance
-over a different transport.
+`rainbow-trail` requires `allow_remote_control socket-only` and a `listen_on unix:/tmp/...` socket
+in `kitty.conf`. This is a local Unix domain socket scoped to your user, not a network listener -
+only local processes running as you can reach it. `socket-only` (rather than `yes`) additionally
+restricts control to that socket, so other kitty windows/tabs on the same machine can't issue
+arbitrary remote-control commands to this instance over a different transport.
 
 ## Reporting a Vulnerability
 

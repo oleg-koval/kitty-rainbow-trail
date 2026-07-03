@@ -1,0 +1,7 @@
+# Generalized base cursor colors, independent of the trail effect above.
+# Rename to current-theme.conf (or merge into your existing theme file) and
+# `include` it from kitty.conf if you want a dedicated theme file, kitty's
+# own theme tooling (`kitty +kitten themes`) already generates one of these.
+
+cursor                  #dddddd
+cursor_text_color       #111111

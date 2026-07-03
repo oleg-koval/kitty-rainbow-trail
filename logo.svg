@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">kitty-starter logo</title>
+  <desc id="desc">A terminal cursor block leading a rainbow comet trail.</desc>
+  <defs>
+    <linearGradient id="trail" x1="120" y1="360" x2="360" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="25%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="75%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0d1117"/>
+  <path d="M130 372 C 190 372, 250 260, 340 170" fill="none" stroke="url(#trail)"
+        stroke-width="46" stroke-linecap="round" opacity="0.9"/>
+  <rect x="316" y="120" width="70" height="110" rx="14" fill="#f5f5f5"/>
+</svg>

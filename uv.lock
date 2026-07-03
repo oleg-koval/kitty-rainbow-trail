@@ -126,7 +126,7 @@ wheels = [
 ]
 
 [[package]]
-name = "kitty-starter"
+name = "kitty-rainbow-trail"
 version = "0.0.1"
 source = { editable = "." }
 

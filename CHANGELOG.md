@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- Generic `kitty.conf` boilerplate for remote control and the `include`-based hot-reload pattern.
-- `kitty_starter` example package: a `ping` command demonstrating the pure-logic /
-  remote-control-boundary split to follow for your own kitten.
-- Unit tests for the pure greeting function and an end-to-end test against the real CLI.
+- Documented `cursor_trail` settings in `kitty.conf` for the flying/jumping cursor animation.
+- `rainbow-trail` CLI (`rainbow_trail` package) that cycles `cursor_trail_color` through the hue
+  wheel via kitty's remote-control API.
+- `start` / `stop` / `toggle` commands with pidfile-based lifecycle management.
+- Unit tests for the pure hue-cycling math and end-to-end tests against the real CLI.
