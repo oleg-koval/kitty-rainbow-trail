@@ -32,27 +32,55 @@
 
 ## Installation
 
-Not yet published to PyPI — install straight from GitHub:
+Requirements: [kitty](https://sw.kovidgoyal.net/kitty/binary/) 0.36 or newer and Python 3.12 or newer.
+
+1. Install the `rainbow-trail` command from GitHub:
 
 ```bash
 uv tool install git+https://github.com/oleg-koval/kitty-rainbow-trail
-# or
-pip install git+https://github.com/oleg-koval/kitty-rainbow-trail
 ```
 
-Then copy `kitty.conf` into `~/.config/kitty/` (or `include` it from your existing config):
+No `uv`? Use `pipx install git+https://github.com/oleg-koval/kitty-rainbow-trail` instead.
+
+2. Download the trail settings as a separate config fragment. This preserves your existing
+   `kitty.conf`:
 
 ```bash
-cp kitty.conf ~/.config/kitty/kitty.conf
-kitty +kitten themes  # optional: pick a color theme, doesn't affect the trail
+mkdir -p ~/.config/kitty
+curl -fsSL https://raw.githubusercontent.com/oleg-koval/kitty-rainbow-trail/main/kitty.conf \
+  -o ~/.config/kitty/rainbow-trail.conf
+printf '\ninclude rainbow-trail.conf\n' >> ~/.config/kitty/kitty.conf
 ```
 
-## Quick Start
+If `include rainbow-trail.conf` is already present, do not add it a second time.
 
-1. Reload kitty (`ctrl+shift+F5` or restart it) so `allow_remote_control`, `listen_on`, and the
-   `include rainbow-trail-override.conf` line take effect.
-2. Press `ctrl+shift+r` to start the rainbow cycle, press it again to stop.
-3. Or drive it from a terminal: `rainbow-trail start`.
+3. Restart kitty, then press `ctrl+shift+r`. The same shortcut stops the rainbow cycle.
+
+To verify the command separately:
+
+```bash
+rainbow-trail toggle
+```
+
+## Existing clone
+
+If you cloned this repository, install and configure it with:
+
+```bash
+uv tool install .
+mkdir -p ~/.config/kitty
+cp kitty.conf ~/.config/kitty/rainbow-trail.conf
+printf '\ninclude rainbow-trail.conf\n' >> ~/.config/kitty/kitty.conf
+```
+
+## Troubleshooting
+
+- `rainbow-trail: command not found`: ensure the uv or pipx tool bin directory is on `PATH`, then
+  open a new shell. Run `uv tool dir --bin` to locate the uv directory.
+- Nothing happens after the shortcut: restart kitty after adding the include; reloading only the
+  current shell is not enough.
+- `kitty @ load-config failed`: confirm `rainbow-trail.conf` is included and that no later config
+  line overrides `allow_remote_control` or `listen_on`.
 
 ## Configuration
 
