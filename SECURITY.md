@@ -2,24 +2,17 @@
 
 ## Supported Versions
 
-| Version      | Supported           |
-| ------------ | ------------------- |
-| Latest minor | Yes                 |
-| Older        | No                  |
-
-## About the remote-control socket
-
-`rainbow-trail` requires `allow_remote_control socket-only` and a `listen_on unix:/tmp/...` socket
-in `kitty.conf`. This is a local Unix domain socket scoped to your user, not a network listener -
-only local processes running as you can reach it. `socket-only` (rather than `yes`) additionally
-restricts control to that socket, so other kitty windows/tabs on the same machine can't issue
-arbitrary remote-control commands to this instance over a different transport.
+| Version        | Supported           |
+| -------------- | ------------------- |
+| Latest minor   | Yes                 |
+| Previous minor | Security fixes only |
+| Older          | No                  |
 
 ## Reporting a Vulnerability
 
 **Please do not open a public GitHub issue for security vulnerabilities.**
 
-Email **kvl.olg@gmail.com** with:
+Email **oleg@bizcuit.nl** with:
 
 1. A description of the vulnerability and its potential impact
 2. Steps to reproduce or a proof-of-concept
